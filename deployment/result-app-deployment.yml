@@ -5,12 +5,17 @@ metadata:
   labels:
     app: demo-voting-app
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       name: result-app-pod
       app: demo-voting-app
   template:
+    metadata:
+      name: result-app-pod
+      labels:
+        name: result-app-pod
+        app: demo-voting-app
     spec:
       containers:
       - name: result-app
